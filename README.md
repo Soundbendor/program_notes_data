@@ -7,7 +7,7 @@ chmod a+x Miniconda3-latest-Linux-x86_64.sh
 
 Note - While going through Conda’s guided installer, it will ask you to specify an installation directory. This will default to your home directory - which has a 14gb disk restriction as a student. You will likely want to  change this path to use the SoundBendOR Lab filespace. /nfs/guille/eecs_research/soundbendor/<ONID>
 
-# Create a new conda environment and activate it
+Create a new conda environment and activate it
 conda create -n program_notes python=3.12
 
 conda activate program_notes
@@ -15,8 +15,10 @@ conda activate program_notes
 
 pip install jupyterlab
 
+# Load these modules
 module load gcc cmake cuda/11.8 slurm
 
+# Install PyTorch
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 
 If you get this error and can’t open Jupyter Session:
@@ -24,7 +26,7 @@ AttributeError: partially initialized module 'charset_normalizer' has no attribu
 Do this:
 pip install -U --force-reinstall charset-normalizer
 
-pip install everything below:
+#pip install everything below:
 python-dotenv==1.0.1
 pydot==2.0.0
 langchain==0.2.3
