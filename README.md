@@ -5,7 +5,7 @@ chmod a+x Miniconda3-latest-Linux-x86_64.sh
 
 ./Miniconda3-latest-Linux-x86_64.sh
 
-Note - While going through Conda’s guided installer, it will ask you to specify an installation directory. This will default to your home directory - which has a 14gb disk restriction as a student. You will likely want to  change this path to use the SoundBendOR Lab filespace. /nfs/guille/eecs_research/soundbendor/<ONID>
+Note - While going through Conda’s guided installer, it will ask you to specify an installation directory. This will default to your home directory - which has a 14gb disk restriction as a student. You will likely want to  change this path to use the SoundBendOR Lab filespace. /to/soundbendor/<ONID>
 
 Create a new conda environment and activate it
 conda create -n program_notes python=3.12

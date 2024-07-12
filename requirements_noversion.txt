@@ -1,0 +1,15 @@
+jupyterlab
+python-dotenv
+pydot
+langchain
+langchain-cohere
+langchain-community
+langchain-core
+langchain-groq
+langchain-text-splitters
+langcodes
+langdetect
+langsmith
+sentence-transformers
+transformers
+accelerate
