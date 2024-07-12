@@ -1,15 +1,3 @@
-jupyterlab
-python-dotenv
-pydot
-langchain
-langchain-cohere
-langchain-community
-langchain-core
-langchain-groq
-langchain-text-splitters
-langcodes
-langdetect
-langsmith
-sentence-transformers
-transformers
-accelerate
+version https://git-lfs.github.com/spec/v1
+oid sha256:306e20208c2c06dbb259687561b64ef776522b9ee874611f0dd5fe070c136133
+size 210

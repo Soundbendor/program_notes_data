@@ -1,15 +1,3 @@
-jupyterlab
-python-dotenv==1.0.1
-pydot==2.0.0
-langchain==0.2.3
-langchain-cohere==0.1.5
-langchain-community==0.0.38
-langchain-core==0.2.5
-langchain-groq==0.1.3
-langchain-text-splitters==0.2.1
-langcodes==3.4.0
-langdetect==1.0.9
-langsmith==0.1.75
-sentence-transformers==2.7.0
-transformers==4.41.2
-accelerate==0.30.1
+version https://git-lfs.github.com/spec/v1
+oid sha256:ece44f3a08b052ff57b243beda4a5308f7004d9c4296786b24524ee10bd079a0
+size 311
