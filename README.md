@@ -1,3 +1,60 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1bc5d505e2fbe11a0948d58487f5efcc35eca5c6dabca2bcd3def42e9565c93
-size 1488
+Install miniconda if you don't have it:
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+chmod a+x Miniconda3-latest-Linux-x86_64.sh
+
+./Miniconda3-latest-Linux-x86_64.sh
+
+Note - While going through Condaâ€™s guided installer, it will ask you to specify an installation directory. This will default to your home directory - which has a 14gb disk restriction as a student. You will likely want to  change this path to use the SoundBendOR Lab filespace. /to/soundbendor/<ONID>
+
+Create a new conda environment and activate it
+conda create -n program_notes python=3.12
+
+conda activate program_notes
+
+
+pip install jupyterlab
+
+# Load these modules
+module load gcc cmake cuda/11.8 slurm
+
+# Install PyTorch
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+If you get this error and canâ€™t open Jupyter Session:
+AttributeError: partially initialized module 'charset_normalizer' has no attribute 'md__mypyc' (most likely due to a circular import)
+Do this:
+pip install -U --force-reinstall charset-normalizer
+
+#pip install everything below:
+python-dotenv==1.0.1
+
+pydot==2.0.0
+
+langchain==0.2.3
+
+langchain-cohere==0.1.5
+
+langchain-community==0.0.38
+
+langchain-core==0.2.5
+
+langchain-groq==0.1.3
+
+langchain-text-splitters==0.2.1
+
+langcodes==3.4.0
+
+langdetect==1.0.9
+
+langsmith==0.1.75
+
+sentence-transformers==2.7.0
+
+transformers==4.41.2
+
+accelerate==0.30.1
+
+conda install -c pytorch faiss-gpu
+
+Now you will be able to run the batch file.
