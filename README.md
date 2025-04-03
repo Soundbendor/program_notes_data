@@ -1,3 +1,77 @@
+**EmotioNotes** is a curated dataset of historical concert program notes annotated with emotional content, designed to support research in music emotion recognition (MER), music information retrieval, and cultural musicology.
+
+This dataset leverages archival materials from the **New York Philharmonic** dating back to the 1840s. Each entry includes metadata about the performance, detailed program notes, and estimated emotional scores in **valence**, **arousal**, and **dominance** (VAD) dimensions.
+
+---
+
+## 📦 Dataset Description
+
+Each JSON entry in the dataset corresponds to a specific performance of a classical music work and includes the following fields:
+
+### 🎼 Performance Metadata
+- `id`: Unique identifier
+- `programID`: Identifier of the original concert program
+- `orchestra`: Performing ensemble
+- `season`: Concert season (e.g., "1842–43")
+- `concerts`: List of performance details:
+  - `eventType`: e.g., "Subscription Season", "Special"
+  - `location`: e.g., "Manhattan, NY"
+  - `venue`: Venue name
+  - `date`: Date of performance
+  - `time`: Time of performance
+
+### 🎶 Musical Work Details
+- `workTitle`: Title of the performed piece
+- `movement`: Specific movement (if available)
+- `composerName`: Name of the composer
+- `conductorName`: Name of the conductor
+- `soloists`: List of soloists with:
+  - `soloistName`
+  - `soloistInstrument`
+  - `soloistRoles`
+
+### 📝 Program Note
+- `ProgramNote`: Extracted textual description of the musical work, drawn from archival concert booklets.
+
+### Emotion Annotations
+Emotion scores are derived using a lexicon-based method (Warriner et al., 2013):
+- `valence_mean`: Pleasantness of a stimulus (0–1 scale)
+- `arousal_mean`: Intensity/energy (0–1 scale)
+- `dominance_mean`: Sense of control (0–1 scale)
+- `valence_std`, `arousal_std`, `dominance_std`: Standard deviation of emotional scores
+
+### Metrics for avoiding hallucinations
+- `BLEUScore`: A text similarity score used to evaluate the quality of extracted program notes against the raw OCR text.
+
+---
+
+## 📊 Use Cases
+
+This dataset is ideal for:
+- Text-based emotion recognition in music
+- Music recommendation systems based on emotion
+- Cultural analysis of how music was described across centuries
+- Using text-based emotion annotations to audio/music scores as proxies
+
+---
+
+## 📁 Format
+
+The dataset is provided in **JSON format**. Example entry:
+
+```json
+{
+  "workTitle": "Symphony No. 3 In E Flat Major, Op. 55 (Eroica)",
+  "composerName": "Ludwig van Beethoven",
+  "ProgramNote": "This great work was commenced when Napoleon was first Consul...",
+  "valence_mean": 0.585,
+  "arousal_mean": 0.384,
+  "dominance_mean": 0.618
+}
+```
+
+---
+
 Install miniconda if you don't have it:
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
