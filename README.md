@@ -70,6 +70,7 @@ The dataset is provided in **JSON format**. Example entry:
 }
 ```
 
+## Getting Started
 ---
 
 Install miniconda if you don't have it:
