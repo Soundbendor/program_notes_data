@@ -70,6 +70,22 @@ The dataset is provided in **JSON format**. Example entry:
 }
 ```
 
+## 📚 Citation
+
+If you use this dataset, please cite the following paper:
+
+> Khanal, P., & Donnelly, P. (2024). *EmotioNotes Dataset: Decoding emotions in classical music through concert program notes*. In: Johnson, C., Machado, P., Santos, I. (eds) Artificial Intelligence in Music, Sound, Art and Design. EvoMUSART 2025. Lecture Notes in Computer Science, vol xxxxx. Springer, Cham. https://doi.org/10.1007/978-3-031-90167-6_23
+
+📂 [Dataset & Code](https://github.com/Soundbendor/program_notes_data)
+
+## 🙌 Acknowledgments
+
+This project would not have been possible without the following:
+
+- The **New York Philharmonic Digital Archives**, for access to centuries of concert program materials.
+- **Meta AI** for open-sourcing **LLaMA 3.1**, which enabled structured text extraction from unstructured OCR text.
+- **Warriner et al. (2013)** for the valence, arousal, and dominance (VAD) emotion lexicon used for annotation.
+
 ## Getting Started
 
 Install miniconda if you don't have it:
