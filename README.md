@@ -2,6 +2,28 @@
 
 This dataset leverages archival materials from the **New York Philharmonic** dating back to the 1840s. Each entry includes metadata about the performance, detailed program notes, and estimated emotional scores in **valence**, **arousal**, and **dominance** (VAD) dimensions.
 
+
+**Explore it online:** [EmotioNotes Explorer](https://soundbendor-emotionotes.streamlit.app/), where you can search the notes by composer or piece and see each note's emotion words highlighted.
+
+## ⬇️ Download
+
+The data files are attached to the [**v1.0 release**](https://github.com/Soundbendor/program_notes_data/releases/tag/v1.0) and are not stored in the git tree.
+
+| File | Contents |
+|---|---|
+| [`emotionotes_v1.json.gz`](https://github.com/Soundbendor/program_notes_data/releases/download/v1.0/emotionotes_v1.json.gz) | **The EmotioNotes dataset** described in the paper: 31,966 program notes from 9,569 programs (1842–2023), with performance metadata, VAD scores and `BLEUScore`. gzip-compressed JSON list. |
+| [`emotionotes_v1.parquet`](https://github.com/Soundbendor/program_notes_data/releases/download/v1.0/emotionotes_v1.parquet) | The same 31,966 notes as Parquet, with cleaned columns (`composer`, `work`, `note`, `valence`, `arousal`, `dominance`, `bleu`, parsed `date` and `decade`). This is the file used by the online explorer. |
+| [`emotionotes_v1_before_bleu_filter.json.gz`](https://github.com/Soundbendor/program_notes_data/releases/download/v1.0/emotionotes_v1_before_bleu_filter.json.gz) | All 46,992 extracted and scored notes **before** the BLEU hallucination filter. |
+| [`nyphilharmonic_programs.json.gz`](https://github.com/Soundbendor/program_notes_data/releases/download/v1.0/nyphilharmonic_programs.json.gz) | The OCR'd New York Philharmonic program text used as extraction input. |
+| [`SHA256SUMS`](https://github.com/Soundbendor/program_notes_data/releases/download/v1.0/SHA256SUMS) | Checksums; verify with `sha256sum -c SHA256SUMS`. |
+
+```python
+import gzip, json
+notes = json.load(gzip.open("emotionotes_v1.json.gz", "rt"))
+```
+
+**Sources and rights.** Performance metadata comes from the NY Philharmonic [Performance History](https://github.com/nyphilarchive/PerformanceHistory) (CC0). Program-note text comes from the NY Philharmonic Shelby White & Leon Levy [Digital Archives](https://archives.nyphil.org/), which publishes no explicit reuse licence; it is shared here for non-commercial research and teaching, with attribution to the New York Philharmonic Archives.
+
 ---
 
 ## 📦 Dataset Description
@@ -74,9 +96,19 @@ The dataset is provided in **JSON format**. Example entry:
 
 If you use this dataset, please cite the following paper:
 
-> Khanal, P., & Donnelly, P. (2024). *EmotioNotes Dataset: Decoding emotions in classical music through concert program notes*. In: Johnson, C., Machado, P., Santos, I. (eds) Artificial Intelligence in Music, Sound, Art and Design. EvoMUSART 2025. Lecture Notes in Computer Science, vol xxxxx. Springer, Cham. https://doi.org/10.1007/978-3-031-90167-6_23
+> Khanal, P., & Donnelly, P. J. (2025). *EmotioNotes Dataset: Decoding Emotions in Classical Music Through Concert Program Notes*. In: Machado, P., Johnson, C., Santos, I. (eds) Artificial Intelligence in Music, Sound, Art and Design. EvoMUSART 2025. Lecture Notes in Computer Science, vol 15611, pp. 339–356. Springer, Cham. https://doi.org/10.1007/978-3-031-90167-6_23
 
-📂 [Dataset & Code](https://github.com/Soundbendor/program_notes_data)
+```bibtex
+@inproceedings{khanal2025emotionotes,
+  author    = {Khanal, Pratik and Donnelly, Patrick J.},
+  title     = {EmotioNotes Dataset: Decoding Emotions in Classical Music Through Concert Program Notes},
+  booktitle = {Artificial Intelligence in Music, Sound, Art and Design (EvoMUSART 2025)},
+  series    = {Lecture Notes in Computer Science}, volume = {15611}, pages = {339--356},
+  publisher = {Springer}, year = {2025}, doi = {10.1007/978-3-031-90167-6_23}
+}
+```
+
+📂 [Dataset & Code](https://github.com/Soundbendor/program_notes_data) · 🔎 [Online explorer](https://soundbendor-emotionotes.streamlit.app/)
 
 ## 🙌 Acknowledgments
 
@@ -95,7 +127,7 @@ chmod a+x Miniconda3-latest-Linux-x86_64.sh
 
 ./Miniconda3-latest-Linux-x86_64.sh
 
-Note - While going through CondaÃ¢â‚¬â„¢s guided installer, it will ask you to specify an installation directory. This will default to your home directory - which has a 14gb disk restriction as a student. You will likely want to  change this path to use the SoundBendOR Lab filespace. /to/soundbendor/<ONID>
+Note - While going through Conda's guided installer, it will ask you to specify an installation directory. This will default to your home directory - which has a 14gb disk restriction as a student. You will likely want to  change this path to use the SoundBendOR Lab filespace. /to/soundbendor/<ONID>
 
 Create a new conda environment and activate it
 conda create -n program_notes python=3.12
@@ -148,3 +180,5 @@ accelerate==0.30.1
 conda install -c pytorch faiss-gpu
 
 Now you will be able to run the batch file.
+
+The scripts read `HF_TOKEN` (a Hugging Face access token with Llama 3.1 access) and, for the RAG variants, `COHERE_API_KEY` from a `.env` file in this folder. `.env` is git-ignored; never commit it.
