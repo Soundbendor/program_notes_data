@@ -22,8 +22,7 @@ import gzip, json
 notes = json.load(gzip.open("emotionotes_v1.json.gz", "rt"))
 ```
 
-**Sources and rights.** Performance metadata comes from the NY Philharmonic [Performance History](https://github.com/nyphilarchive/PerformanceHistory) (CC0). Program-note text comes from the NY Philharmonic Shelby White & Leon Levy [Digital Archives](https://archives.nyphil.org/), which publishes no explicit reuse licence; it is shared here for non-commercial research and teaching, with attribution to the New York Philharmonic Archives.
-
+**Sources and rights.** Performance metadata comes from the NY Philharmonic [Performance History](https://github.com/nyphilarchive/PerformanceHistory) (CC0). Program-note text comes from the NY Philharmonic Shelby White & Leon Levy [Digital Archives](https://archives.nyphil.org/).
 ---
 
 ## 📦 Dataset Description
