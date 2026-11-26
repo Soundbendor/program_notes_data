@@ -3,7 +3,7 @@
 This dataset leverages archival materials from the **New York Philharmonic** dating back to the 1840s. Each entry includes metadata about the performance, detailed program notes, and estimated emotional scores in **valence**, **arousal**, and **dominance** (VAD) dimensions.
 
 
-**Explore it online:** [EmotioNotes Explorer](https://soundbendor-emotionotes.streamlit.app/), where you can search the notes by composer or piece and see each note's emotion words highlighted.
+**Explore it online:** [EmotioNotes](https://emotionotes.streamlit.app/), where you can search the notes by composer or piece and see each note's emotion words highlighted.
 
 ## ⬇️ Download
 
@@ -107,7 +107,7 @@ If you use this dataset, please cite the following paper:
 }
 ```
 
-📂 [Dataset & Code](https://github.com/Soundbendor/program_notes_data) · 🔎 [Online explorer](https://soundbendor-emotionotes.streamlit.app/)
+📂 [Dataset & Code](https://github.com/Soundbendor/program_notes_data) · 🔎 [Online explorer](https://emotionotes.streamlit.app/)
 
 ## 🙌 Acknowledgments
 
